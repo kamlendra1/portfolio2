@@ -1,0 +1,497 @@
+/* RESET & BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #0a0f1c;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* HERO SECTION */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  text-align: center;
+  flex-direction: column;
+  background: linear-gradient(135deg, #0a0f1c, #111827);
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #38bdf8;
+}
+
+.hero h2 {
+  font-size: 1.8rem;
+  margin: 10px 0;
+  color: #ffffff;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #cbd5e1;
+  max-width: 700px;
+  margin: 10px auto 30px;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.stat h2 {
+  font-size: 2rem;
+  color: #38bdf8;
+}
+
+.stat span {
+  display: block;
+  margin-top: 5px;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+/* GLASS SECTIONS */
+.section.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 60px 20px;
+  margin: 40px auto;
+  border-radius: 20px;
+  max-width: 1200px;
+}
+
+/* SECTION HEADINGS */
+.section h2 {
+  font-size: 2rem;
+  color: #38bdf8;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* ABOUT */
+#about p {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+/* SKILLS SECTION */
+.skills-section {
+  padding: 40px 20px;
+  background-color: #0a0f1c;
+  overflow: hidden;
+  text-align: center;
+}
+
+.skills-section h2 {
+  color: #38bdf8;
+  margin-bottom: 20px;
+}
+
+/* Skills scrolling track */
+.skills-wrapper {
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.skills-track {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scrollSkills 20s linear infinite;
+}
+
+.skills-track .skill {
+  display: inline-block;
+  margin: 0 25px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+/* Pause scrolling on hover or touch */
+.skills-wrapper:hover .skills-track,
+.skills-wrapper:active .skills-track {
+  animation-play-state: paused;
+}
+
+/* Glow effect on click */
+.skills-wrapper:active .skills-track .skill {
+  color: #38bdf8;
+  text-shadow: 0 0 8px #38bdf8, 0 0 16px #38bdf8, 0 0 24px #38bdf8;
+  animation: glow 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  0% { text-shadow: 0 0 8px #38bdf8, 0 0 16px #38bdf8, 0 0 24px #38bdf8; }
+  100% { text-shadow: 0 0 16px #38bdf8, 0 0 32px #38bdf8, 0 0 48px #38bdf8; }
+}
+
+@keyframes scrollSkills {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* PROJECTS GRID */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.project {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(56,189,248,0.3);
+}
+
+.project h3 {
+  color: #38bdf8;
+  margin-bottom: 10px;
+}
+
+.project p, .project small {
+  color: #cbd5e1;
+}
+
+/* CONTACT BUTTONS */
+#contact-footer {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.contact-buttons a {
+  display: inline-block;
+  padding: 14px 36px;
+  border-radius: 40px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Resume button - static gradient */
+.btn-resume {
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  color: #020617;
+  border: none;
+}
+
+/* Email & LinkedIn hover/click effect */
+.btn-email, .btn-linkedin {
+  background: transparent;
+  color: #38bdf8;
+  border: 1px solid #38bdf8;
+}
+
+.btn-email:active, .btn-linkedin:active {
+  background: #38bdf8;
+  color: #020617;
+  transform: translateY(2px);
+  box-shadow: 0 4px 10px rgba(56,189,248,0.4);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  background-color: #0a0f1c;
+  color: #ffffff;
+  margin-top: 40px;
+  font-size: 0.95rem;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 600px) {
+  .skills-track .skill {
+    font-size: 16px;
+    margin: 0 15px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero h2 {
+    font-size: 1.4rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .contact-buttons a {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+}
+/* CONTACT FOOTER */
+#contact-footer {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* COMMON BUTTON STYLE */
+.contact-buttons a {
+  padding: 14px 36px;
+  border-radius: 40px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  user-select: none;
+}
+
+/* RESUME BUTTON (no auto animation) */
+.btn-resume {
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  color: #020617;
+}
+
+/* EMAIL + LINKEDIN */
+.btn-email,
+.btn-linkedin {
+  background: transparent;
+  color: #38bdf8;
+  border: 1.5px solid #38bdf8;
+}
+
+/* 🔥 CLICK EFFECT (LIGHTS) */
+.btn-resume:active,
+.btn-email:active,
+.btn-linkedin:active {
+  background: #38bdf8;
+  color: #020617;
+  box-shadow:
+    0 0 10px #38bdf8,
+    0 0 20px #38bdf8,
+    0 0 35px #38bdf8;
+  transform: scale(0.96);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .contact-buttons a {
+    width: 100%;
+  }
+}
+/* CONTACT FOOTER */
+#contact-footer {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+/* COMMON BUTTON */
+.contact-buttons a {
+  padding: 14px 38px;
+  border-radius: 40px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  transition: 
+    background 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.2s ease;
+}
+
+/* RESUME */
+.btn-resume {
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  color: #020617;
+}
+
+/* EMAIL + LINKEDIN */
+.btn-email,
+.btn-linkedin {
+  background: transparent;
+  color: #38bdf8;
+  border: 1.5px solid #38bdf8;
+}
+
+/* 🔥 HOVER EFFECT (NOW IT WILL WORK) */
+.contact-buttons a:hover {
+  background: #38bdf8;
+  color: #020617;
+  box-shadow:
+    0 0 10px #38bdf8,
+    0 0 25px #38bdf8,
+    0 0 45px #38bdf8;
+  transform: translateY(-2px);
+}
+
+/* 🔥 CLICK EFFECT (STRONGER LIGHT) */
+.contact-buttons a:active {
+  box-shadow:
+    0 0 15px #38bdf8,
+    0 0 35px #38bdf8,
+    0 0 60px #38bdf8;
+  transform: scale(0.95);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .contact-buttons a {
+    width: 100%;
+  }
+}
+/* CONTACT FOOTER */
+#contact-footer {
+  padding: 60px 20px;
+  text-align: center;
+  background: transparent;
+}
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+/* 🔹 COMMON BUTTON STYLE (ALL SAME) */
+.contact-buttons a {
+  padding: 16px 42px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  background: transparent;              /* 👈 IMPORTANT */
+  color: #38bdf8;
+  border: 2px solid #38bdf8;
+  cursor: pointer;
+  user-select: none;
+
+  transition:
+    background 0.35s ease,
+    color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.25s ease;
+}
+
+/* ❌ REMOVE DEFAULT BLUE FROM RESUME */
+.btn-resume {
+  background: transparent;
+  color: #38bdf8;
+  border: 2px solid #38bdf8;
+}
+
+/* 🔥 HOVER = LIGHT + FILL */
+.contact-buttons a:hover {
+  background: #38bdf8;
+  color: #020617;
+  box-shadow:
+    0 0 12px #38bdf8,
+    0 0 28px #38bdf8,
+    0 0 50px #38bdf8;
+  transform: translateY(-3px);
+}
+
+/* 🔥 CLICK = STRONGER GLOW */
+.contact-buttons a:active {
+  box-shadow:
+    0 0 20px #38bdf8,
+    0 0 45px #38bdf8,
+    0 0 80px #38bdf8;
+  transform: scale(0.95);
+}
+
+/* 📱 MOBILE */
+@media (max-width: 600px) {
+  .contact-buttons a {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+/* === RIPPLE SETUP === */
+.contact-buttons a {
+  position: relative;
+  overflow: hidden; /* ripple ke liye important */
+  -webkit-tap-highlight-color: transparent; /* mobile blue flash off */
+}
+
+/* Ripple circle */
+.contact-buttons a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(56, 189, 248, 0.45); /* same theme blue */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* 🔥 TAP / CLICK = RIPPLE */
+.contact-buttons a:active::after {
+  width: 220%;
+  height: 220%;
+  transition: width 0.4s ease, height 0.4s ease;
+}
+
+/* === MICRO INTERACTION POLISH === */
+
+/* smooth press feel (mobile + desktop) */
+.contact-buttons a:active {
+  transform: scale(0.94);
+}
+
+/* ultra smooth hover (desktop) */
+.contact-buttons a:hover {
+  transform: translateY(-3px);
+}
+
+/* accessibility + performance */
+@media (prefers-reduced-motion: reduce) {
+  .contact-buttons a,
+  .contact-buttons a::after {
+    transition: none;
+  }
+}
